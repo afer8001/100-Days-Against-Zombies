@@ -230,3 +230,57 @@ keys[e.code] = false;
 // ================= PLAYER SETTINGS =================
 
 const PLAYER_SPEED = 0.15;
+
+// ================= PLAYER MOVEMENT =================
+
+function updatePlayer(){
+
+    if(keys["KeyW"]){
+
+        player.position.z -= PLAYER_SPEED;
+
+    }
+
+    if(keys["KeyS"]){
+
+        player.position.z += PLAYER_SPEED;
+
+    }
+
+    if(keys["KeyA"]){
+
+        player.position.x -= PLAYER_SPEED;
+
+    }
+
+    if(keys["KeyD"]){
+
+        player.position.x += PLAYER_SPEED;
+
+    }
+
+}
+
+
+// ================= THIRD PERSON CAMERA =================
+
+function updateCamera(){
+
+    camera.position.x =
+    player.position.x;
+
+    camera.position.y =
+    player.position.y + 6;
+
+    camera.position.z =
+    player.position.z + 8;
+
+    camera.lookAt(
+
+        player.position.x,
+        player.position.y + 1,
+        player.position.z
+
+    );
+
+}
