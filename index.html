@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>100 Days Against Zombies</title>
+
+<style>
+
+html,
+body{
+
+    margin:0;
+    overflow:hidden;
+
+    width:100%;
+    height:100%;
+
+}
+
+canvas{
+
+    display:block;
+
+}
+
+#hud{
+
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    color:white;
+
+    font-family:Arial;
+
+    font-size:24px;
+
+    z-index:10;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="hud">
+
+HP: <span id="hp">100</span>
+<br>
+Day: <span id="day">1</span>
+
+</div>
+
+<script type="module" src="game.js"></script>
+
+</body>
+
+</html>
