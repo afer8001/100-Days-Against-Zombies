@@ -115,3 +115,118 @@ window.innerHeight
 }
 
 );
+
+// ================= GAME STATE =================
+
+let playerHP = 100;
+
+let currentDay = 1;
+
+
+// ================= GROUND =================
+
+const groundGeometry =
+new THREE.BoxGeometry(
+
+100,
+1,
+100
+
+);
+
+const groundMaterial =
+new THREE.MeshLambertMaterial({
+
+color:0x55aa55
+
+});
+
+const ground =
+new THREE.Mesh(
+
+groundGeometry,
+
+groundMaterial
+
+);
+
+ground.position.y =
+-0.5;
+
+scene.add(
+ground
+);
+
+
+// ================= PLAYER =================
+
+const playerGeometry =
+new THREE.BoxGeometry(
+
+1,
+2,
+1
+
+);
+
+const playerMaterial =
+new THREE.MeshLambertMaterial({
+
+color:0x3366ff
+
+});
+
+const player =
+new THREE.Mesh(
+
+playerGeometry,
+
+playerMaterial
+
+);
+
+player.position.set(
+
+0,
+1,
+0
+
+);
+
+scene.add(
+player
+);
+
+
+// ================= INPUT =================
+
+const keys = {};
+
+document.addEventListener(
+
+"keydown",
+
+(e)=>{
+
+keys[e.code] = true;
+
+}
+
+);
+
+document.addEventListener(
+
+"keyup",
+
+(e)=>{
+
+keys[e.code] = false;
+
+}
+
+);
+
+
+// ================= PLAYER SETTINGS =================
+
+const PLAYER_SPEED = 0.15;
